@@ -1,40 +1,34 @@
-package com.tutorias.tutorias.Entidad;
+package com.itsqmet.app_bibloteca.entidad;
 
-import jakarta.validation.constraints.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
 public class Tutoria {
-
-    @NotBlank(message = "El nombre no puede estar vacío")
-    @Size(min = 3, max = 50, message = "El nombre debe tener entre 3 y 50 caracteres")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
-
-    @NotBlank(message = "El apellido no puede estar vacío")
-    @Size(min = 3, max = 100, message = "El apellido debe tener entre 3 y 100 caracteres")
-    private String apellidos;
-
-    @NotBlank(message = "La cédula no puede estar vacía")
-    @Pattern(regexp = "\\d{10}", message = "La cédula debe contener exactamente 10 dígitos numéricos")
-    private String cedula;
-
-    @NotBlank(message = "El teléfono no puede estar vacío")
-    @Pattern(regexp = "\\d{10}", message = "El teléfono debe contener exactamente 10 dígitos numéricos")
-    private String telefono;
-
-    @NotBlank(message = "El género no puede estar vacío")
-    @Pattern(regexp = "Hombre|Mujer", message = "El género debe ser 'Hombre' o 'Mujer'")
-    private String genero;
-
-    @NotNull(message = "Debe seleccionar al menos una materia")
-    @Size(min = 1, message = "Debe seleccionar al menos una materia")
-    private List<String> materias;
+    private String nacionaliad;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fechaNacimiento;
 
 
-    // Getters y Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -43,44 +37,19 @@ public class Tutoria {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getNacionaliad() {
+        return nacionaliad;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setNacionaliad(String nacionaliad) {
+        this.nacionaliad = nacionaliad;
     }
 
-    public String getCedula() {
-        return cedula;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public List<String> getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(List<String> materias) {
-        this.materias = materias;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 }
-
