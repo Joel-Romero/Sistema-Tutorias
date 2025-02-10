@@ -74,7 +74,10 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+<<<<<<< HEAD
 			<scope>runtime</scope>
+=======
+>>>>>>> 5aa7e56165d5b84f7855769a7b1d8ac3b7c0023c
 		</dependency>
 
 		<dependency>
