@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tutorías</title>
+
+    <!-- Bootstrap y FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f9fafb;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f1f5f9;
+        }
+
+        .table-striped tbody tr:hover {
+            background-color: #e0f0ff;
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        td {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Botones personalizados */
+        .btn-info {
+            background-color: #17a2b8;
+            border: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(19, 132, 150, 0.3);
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-pdf4 {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3);
+        }
+
+        .btn-pdf4:hover {
+            background-color: #ff3b2e;
+            transform: scale(1.1);
+        }
+
+        /* Animación del hover */
+        a.btn:hover {
+            transform: scale(1.05);
+        }
+
+        a.btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        a.btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 91, 179, 0.3);
+        }
+        /* Estilos de la barra de navegación */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            background: linear-gradient(to right, #1E3A8A, #2563EB);
+            padding: 16px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            padding: 14px 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            background-color: #3B82F6;
+            transform: translateY(-3px);
+        }
+
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar button {
+            display: none;
+        }
+
+        .navbar .navbar-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .navbar .navbar-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-top: 10px;
+            }
+
+            .navbar button {
+                display: inline-block;
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-size: 24px;
+            }
+
+            .navbar.active .navbar-links {
+                display: block;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            .navbar .navbar-links a {
+                font-size: 18px;
+                padding: 12px;
+                color: white;
+            }
+
+            .navbar .navbar-links a:hover {
+                background-color: #608af1;
+                transform: translateY(-2px);
+            }
+        }
+
+        .hero-bg {
+            background-image: url('https://i.pinimg.com/736x/52/30/e5/5230e5277f1bba519b858dc296a72168.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero-bg h1 {
+            color: #f8f9fa; /* Blanco más tenue */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-bg p {
+            color: #e5e7eb; /* Gris muy claro */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #c0eaec;
+        }
+        /* Sección de Introducción */
+        .intro {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+            color: #34495e;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        /* Barra de navegación */
+        /* Estilo para el Navbar */
+        nav {
+            background: linear-gradient(to right, #007bff, #0056b3);
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .navbar-nav {
+            margin-right: 20px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="imagenes/LogoClaro.png" class="h-16 w-16 rounded-none transition-transform duration-300 ease-in-out transform hover:scale-110" alt="Logo">
+            <span class="ms-2 text-2xl font-semibold">TutoriasMaster YVJ</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/formularioTutoria}">Inscribirse</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/formulario/estudiante/formularioEstudiante}">Estudiante</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/formularioTutor}">Tutor</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/Nosotros}">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/formulario2}">Contactos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Lista de Tutor</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Correo</th>
+
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tutor : ${tutor}">
+                <td th:text="${tutor.nombre}"></td>
+                <td th:text="${tutor.especialidad}"></td>
+                <td th:text="${tutor.email}"></td>
+
+
+                <td>
+                    <a th:href="@{/detallesTutor/{id}(id=${tutor.id})}" class="btn btn-info btn-sm">
+                        <i class="fas fa-info-circle"></i> Detalles
+                    </a>
+                    <a th:href="@{/actualizarFormularioTutor/{id}(id=${tutor.id})}" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i> Actualizar
+                    </a>
+                    <a th:href="@{/eliminarFormularioTutor/{id}(id=${tutor.id})}" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/formularioTutor" class="btn btn-primary mt-3">
+        <i class="fas fa-plus-circle"></i> Registrar Nuevo Tutor
+    </a>
+    <a th:href="@{/tutor/pdf}" class="btn btn-pdf4 mt-3">
+        <i class="fas fa-file-pdf"></i> Lista de Tutores
+    </a>
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

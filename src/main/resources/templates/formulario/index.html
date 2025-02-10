@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link th:href="@{/estilosCSS/Estilo3.css}" rel="stylesheet">
+    <link th:href="@{/estilosCSS/index.css}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Home</title>
@@ -13,9 +13,9 @@
 <nav class="bg-gradient-to-r from-blue-700 to-blue-900 py-4 shadow-lg">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4">
         <a href="#" class="flex items-center space-x-3">
-            <img src="imagenes2/icono.jpg" class="h-16 w-16 rounded-none transition-transform duration-300 ease-in-out transform hover:scale-110" alt="Logo" />
+            <img src="imagenes/LogoClaro.png" class="h-16 w-16 rounded-none transition-transform duration-300 ease-in-out transform hover:scale-110" alt="Logo" />
 
-            <span class="self-center text-2xl font-semibold text-white">TutoriasMaster YVJ</span>
+            <span class="self-center text-2xl font-semibold text-white">TutoriasMaster YJ</span>
         </a>
 
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-blue-600 focus:outline-none" aria-controls="navbar-default" aria-expanded="false">
@@ -28,17 +28,22 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:mt-0 md:flex-row md:space-x-8">
                 <li>
-                    <a th:href="@{/formulario}" class="block py-2 px-3 text-white bg-blue-700 rounded-md transition duration-300 hover:bg-blue-500 md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500">Formulario</a>
+                    <a th:href="@{/}" class="block py-2 px-3 text-white bg-blue-700 rounded-md transition duration-300 hover:bg-blue-500 md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500">Inicio</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Nosotros/a>
+                    <a th:href="@{/formularioTutoria}" class="block py-2 px-3 text-white bg-blue-700 rounded-md transition duration-300 hover:bg-blue-500 md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500">Inscribirse</a>
                 </li>
+
+                <a th:href="@{/formulario/estudiante/formularioEstudiante}" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Estudiante</a>
+
                 <li>
-                    <a href="#" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Materias</a>
+                    <a th:href="@{/formularioTutor}"class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Tutor<a>
                 </li>
+
                 <li>
-                    <a href="#" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Tutores</a>
+                    <a th:href="@{/Nosotros}"class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Nosotros<a>
                 </li>
+
                 <li>
                     <a th:href="@{/formulario2}" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contactos</a>
                 </li>
@@ -46,6 +51,8 @@
         </div>
     </div>
 </nav>
+
+
 
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <div class="relative h-[600px] overflow-hidden rounded-lg md:h-[800px]">
@@ -97,11 +104,7 @@
         <h3>Clases Personalizadas</h3>
         <p>Elige la materia y el horario que mejor te convenga</p>
     </div>
-    <div class="service">
-        <i class="fas fa-video text-4xl mb-4"></i>
-        <h3>Clases en Línea</h3>
-        <p>Conéctate con tu tutor a través de videollamadas</p>
-    </div>
+
 
 
     <div class="service">
@@ -119,16 +122,15 @@
         </div>
         <div class="col-md-6 about-content">
             <h5 style="color: #00bcd4;">SOBRE NOSOTROS</h5>
-            <h2>Bienvenidos al TutorMaster YVJ</h2>
-            <p>Aprende desde cualquier lugar con nuestros cursos en línea. Contamos con instructores altamente calificados y certificaciones internacionales.</p>
-            <p>Nuestros cursos están diseñados para brindarte la mejor experiencia de aprendizaje en línea, con materiales actualizados y soporte personalizado.</p>
+            <h2>Bienvenidos a TutorMaster YJ</h2>
+            <p>Aprende de manera personalizada con nuestras tutorías presenciales. Contamos con instructores altamente calificados y un enfoque práctico que se adapta a tus necesidades específicas.</p>
+            <p>Nuestras tutorías están diseñadas para ofrecerte una experiencia de aprendizaje única, con atención individualizada, materiales actualizados y el apoyo constante de nuestros expertos en cada paso del proceso.</p>
             <ul>
                 <li>Instructores Calificados</li>
                 <li>Certificado Internacional</li>
-                <li>Clases en línea</li>
                 <li>Acceso ilimitado 24/7</li>
             </ul>
-            <a href="#" class="btn-leer-mas">Leer más</a>
+
         </div>
     </div>
 </div>
@@ -138,13 +140,13 @@
 </section>
 
 <div class="container my-12 px-4">
-    <h2 class="text-center text-4xl font-bold text-blue-600 mb-8">INSTRUCTORES</h2>
-    <h3 class="text-center text-2xl font-semibold text-gray-800 mb-8">Instructores Expertos</h3>
+    <h2 class="text-center text-4xl font-bold text-blue-600 mb-8">TUTORES</h2>
+    <h3 class="text-center text-2xl font-semibold text-gray-800 mb-8">Tutores Expertos</h3>
 
     <div class="grid md:grid-cols-4 gap-8">
 
         <div class="instructor-card bg-white shadow-lg rounded-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="imagenes2/pro-3.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Laura Pérez">
+            <img src="imagenes2/pro-1.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Laura Pérez">
             <div class="card-body p-4 text-center">
                 <h5 class="text-xl font-semibold text-gray-800">Laura Pérez</h5>
             </div>
@@ -152,7 +154,7 @@
 
         <!-- Instructor 2 -->
         <div class="instructor-card bg-white shadow-lg rounded-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="imagenes2/pro-4.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Carlos Gómez">
+            <img src="imagenes2/pro-2.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Carlos Gómez">
             <div class="card-body p-4 text-center">
                 <h5 class="text-xl font-semibold text-gray-800">Carlos Gómez</h5>
             </div>
@@ -160,7 +162,7 @@
 
         <!-- Instructor 3 -->
         <div class="instructor-card bg-white shadow-lg rounded-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="imagenes2/pro-5.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Fernando Torres">
+            <img src="imagenes2/pro-3.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Fernando Torres">
             <div class="card-body p-4 text-center">
                 <h5 class="text-xl font-semibold text-gray-800">Ana Rosero</h5>
             </div>
@@ -168,7 +170,7 @@
 
         <!-- Instructor 4 -->
         <div class="instructor-card bg-white shadow-lg rounded-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="imagenes2/pro-6.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Diego Rivera">
+            <img src="imagenes2/pro-4.jpg" class="card-img-top instructor-img w-full h-64 object-cover rounded-t-lg" alt="Diego Rivera">
             <div class="card-body p-4 text-center">
                 <h5 class="text-xl font-semibold text-gray-800">Diego Rivera</h5>
             </div>
@@ -178,27 +180,33 @@
     </div>
 </div>
 
-<div class="max-w-screen-lg mx-auto p-6 bg-transparent space-y-6">
-    <p class="text-lg text-gray-800 leading-relaxed font-light text-justify">
-        "Nuestros tutores son un grupo diverso de profesionales con formación académica de alto nivel y una verdadera pasión por enseñar. Cada uno de ellos tiene experiencia práctica en su área de especialización, lo que les permite ofrecer un enfoque auténtico y relevante en sus lecciones. Además de su capacidad técnica, los tutores también se caracterizan por su empatía, creando un ambiente cómodo y libre de estrés donde los estudiantes se sienten cómodos para preguntar y aprender a su propio ritmo."
+<div class="tutor-container">
+    <p class="tutor-paragraph">
+        <span class="highlight">Nuestros tutores</span> son un grupo diverso de profesionales con formación académica de alto nivel y una verdadera pasión por enseñar. Cada uno de ellos tiene experiencia práctica en su área de especialización, lo que les permite ofrecer un enfoque auténtico y relevante en sus lecciones. Además de su capacidad técnica, los tutores también se caracterizan por su empatía, creando un ambiente cómodo y libre de estrés donde los estudiantes se sienten cómodos para preguntar y aprender a su propio ritmo.
     </p>
 
-    <p class="text-lg text-gray-800 leading-relaxed font-light text-justify">
+    <p class="tutor-paragraph">
         A través de un enfoque de enseñanza individualizado, nuestros tutores se centran en los puntos fuertes y las áreas de oportunidad de cada estudiante, diseñando estrategias que facilitan el aprendizaje y hacen que las clases sean más efectivas. Ya sea que busques apoyo en matemáticas, ciencias, idiomas o áreas más específicas como tecnología o arte, nuestros tutores tienen las herramientas y el conocimiento para guiarte.
     </p>
 
-    <p class="text-lg text-gray-800 leading-relaxed font-light text-justify">
-        Sabemos que cada estudiante tiene un estilo único de aprendizaje, por lo que nuestros tutores se adaptan a diferentes métodos y técnicas. Desde el uso de recursos visuales, hasta estrategias interactivas, se aseguran de que cada lección se imparta de la forma que mejor se ajuste a las necesidades de cada alumno. Además, los tutores se mantienen en constante actualización para ofrecer la información más relevante y las técnicas más innovadoras.
+    <p class="tutor-paragraph">
+        Sabemos que cada estudiante tiene un estilo único de aprendizaje, por lo que nuestros tutores se adaptan a diferentes métodos y técnicas. Desde el uso de recursos visuales hasta estrategias interactivas, se aseguran de que cada lección se imparta de la forma que mejor se ajuste a las necesidades de cada alumno. Además, los tutores se mantienen en constante actualización para ofrecer la información más relevante y las técnicas más innovadoras.
     </p>
 
-    <p class="text-lg text-gray-800 leading-relaxed font-light text-justify">
+    <p class="tutor-paragraph">
         Además de ayudar en materias académicas, nuestros tutores también están disponibles para ofrecer consejos prácticos sobre cómo organizarse mejor, cómo establecer metas académicas y cómo gestionar el tiempo de manera efectiva. Su objetivo es no solo que los estudiantes aprueben sus exámenes, sino que también se desarrollen como individuos capaces de enfrentar desafíos en el futuro.
     </p>
 
-    <p class="text-lg text-gray-800 leading-relaxed font-light text-justify">
+    <p class="tutor-paragraph">
         Lo que distingue a nuestros tutores es su capacidad para crear relaciones de confianza y apoyo, permitiendo que los estudiantes se sientan cómodos para expresar dudas y preocupaciones, lo que hace que el aprendizaje sea mucho más que solo clases, sino una experiencia transformadora.
     </p>
+
+    <!-- Botón de llamada a la acción -->
+    <div class="cta-container">
+        <a th:href="@{/formulario/estudiante/formularioEstudiante}" class="cta-button">Solicita tu Tutoría</a>
+    </div>
 </div>
+
 
 
 
@@ -209,21 +217,21 @@
         <div class="testimonial-card bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
             <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente" class="w-24 h-24 rounded-full mx-auto border-4 border-blue-500">
             <h5 class="mt-4 text-xl font-semibold text-gray-800">Ana López</h5>
-            <p class="text-sm text-blue-500">Estudiante de Biología Marina</p>
+            <p class="text-sm text-blue-500">Estudiante de Biología</p>
             <p class="testimonial-text text-gray-700 mt-4 italic">"Gracias a este curso, ahora entiendo mejor la conservación de los arrecifes. ¡Excelente enseñanza!"</p>
         </div>
 
         <div class="testimonial-card bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
             <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Cliente" class="w-24 h-24 rounded-full mx-auto border-4 border-blue-500">
             <h5 class="mt-4 text-xl font-semibold text-gray-800">Carlos Méndez</h5>
-            <p class="text-sm text-blue-500">Investigador en Acuicultura</p>
+            <p class="text-sm text-blue-500">Estudiante de Matematicas</p>
             <p class="testimonial-text text-gray-700 mt-4 italic">"El contenido del curso es muy completo y actualizado. Me ha ayudado mucho en mi trabajo de campo."</p>
         </div>
 
         <div class="testimonial-card bg-white shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
             <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Cliente" class="w-24 h-24 rounded-full mx-auto border-4 border-blue-500">
             <h5 class="mt-4 text-xl font-semibold text-gray-800">Fernando Ruiz</h5>
-            <p class="text-sm text-blue-500">Instructor de Buceo</p>
+            <p class="text-sm text-blue-500">Estudiante de Fisica</p>
             <p class="testimonial-text text-gray-700 mt-4 italic">"Aprendí nuevas técnicas sobre el monitoreo de especies marinas. 100% recomendado."</p>
         </div>
     </div>

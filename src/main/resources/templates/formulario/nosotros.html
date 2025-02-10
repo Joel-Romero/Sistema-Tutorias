@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link th:href="@{/estilosCSS/index.css}" rel="stylesheet">
+  <link th:href="@{/estilosCSS/Nosotros.css}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>Nosotros</title>
+</head>
+<body>
+<nav class="bg-gradient-to-r from-blue-700 to-blue-900 py-4 shadow-lg">
+  <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4">
+    <a href="#" class="flex items-center space-x-3">
+      <img src="imagenes/LogoClaro.png" class="h-16 w-16 rounded-none transition-transform duration-300 ease-in-out transform hover:scale-110" alt="Logo" />
+      <span class="self-center text-2xl font-semibold text-white">TutoriasMaster YVJ</span>
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-blue-600 focus:outline-none" aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Abrir menú</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:mt-0 md:flex-row md:space-x-8">
+        <li>
+          <a th:href="@{/}" class="block py-2 px-3 text-white bg-blue-700 rounded-md transition duration-300 hover:bg-blue-500 md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500">Inicio</a>
+        </li>
+        <li>
+          <a th:href="@{/formularioTutoria}" class="block py-2 px-3 text-white bg-blue-700 rounded-md transition duration-300 hover:bg-blue-500 md:bg-transparent md:text-white md:p-0 md:hover:text-blue-500">Inscribirse</a>
+        </li>
+        <li>
+          <a th:href="@{/Nosotros}" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Nosotros</a>
+        </li>
+        <li>
+          <a th:href="@{/formulario2}" class="block py-2 px-3 text-white rounded-md transition duration-300 hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contactos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Sobre Nosotros</h1>
+  <p>Somos una plataforma educativa comprometida con la democratización del aprendizaje.<br>
+    Conectamos estudiantes con tutores altamente capacitados para ofrecer una educación<br>
+    personalizada, adaptada a las necesidades de cada persona.</p>
+
+  <h2>Nuestra Misión</h2>
+  <p>🚀 <strong>Transformar la educación</strong> a través de una metodología innovadora basada en <br>el acceso equitativo,
+    la personalización del aprendizaje y el uso de tecnologías de vanguardia.</p>
+
+  <ul class="container">
+    <p><strong>Calidad educativa:</strong> Nos aseguramos de ofrecer contenido y tutorías con altos estándares.</p>
+    <p><strong>Inclusión:</strong> Creemos que la educación debe ser accesible para todos.</p>
+    <p><strong>Crecimiento continuo:</strong> Fomentamos un ambiente de aprendizaje y mejora constante.</p>
+  </ul>
+
+  <h2>Nuestro Equipo</h2>
+  <div class="team-members">
+    <div class="member">
+      <img src="Imagenes/Joel.jpg" alt="Yadira Palomo" class="member-img">
+      <h3>Yadira Palomo</h3>
+      <p>Fundadora</p>
+    </div>
+
+    <div class="member">
+      <img src="Imagenes/Joel.jpg" alt="Joel Romero" class="member-img">
+      <h3>Joel Romero</h3>
+      <p>Fundador</p>
+      <p><strong>📧 Correo:</strong> <a href="mailto:joelandres4ever@gmail.com">joelandres4ever@gmail.com</a></p>
+      <p><strong>📱 Teléfono:</strong> 0987282429</p>
+    </div>
+
+    <div class="member">
+      <img src="Imagenes/Joel.jpg" alt="Veronica Zambrano" class="member-img">
+      <h3>Veronica Zambrano</h3>
+      <p>Fundadora</p>
+    </div>
+  </div>
+
+
+
+</div>
+
+<footer class="bg-gray-800 text-white py-6 mt-10">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="flex justify-between items-center">
+      <div class="text-sm">
+        <p>&copy; 2025 TutorMaster YVJ. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>
